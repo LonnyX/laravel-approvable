@@ -39,7 +39,7 @@ php artisan migrate
 
 ## Prepare Model
 
-Setting up a model for auditing couldn't be simpler. Just use the `LonnyX\Approvable\Approvable` trait in the model you wish to audit and implement the `LonnyX\Approvable\Contracts\Approvable`.
+Setting up a model for approval couldn't be simpler. Just use the `LonnyX\Approvable\Approvable` trait in the model you wish to be approved and implement the `LonnyX\Approvable\Contracts\Approvable`.
 ```php
 use Illuminate\Database\Eloquent\Model;
 use LonnyX\Approvable\Contracts\Approvable as ApprovableContract;
