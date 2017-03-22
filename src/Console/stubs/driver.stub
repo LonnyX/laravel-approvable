@@ -1,0 +1,34 @@
+<?php
+
+namespace App\AuditDrivers;
+
+use LonnyX\Approvable\Contracts\Auditable;
+use LonnyX\Approvable\Contracts\AuditDriver;
+use LonnyX\Approvable\Models\Audit;
+
+class CustomDriver implements AuditDriver
+{
+    /**
+     * Perform an audit.
+     *
+     * @param \LonnyX\Approvable\Contracts\Auditable $model
+     *
+     * @return \LonnyX\Approvable\Models\Audit
+     */
+    public function audit(Auditable $model)
+    {
+        //
+    }
+
+    /**
+     * Remove older audits that go over the threshold.
+     *
+     * @param \LonnyX\Approvable\Contracts\Auditable $model
+     *
+     * @return bool
+     */
+    public function prune(Auditable $model)
+    {
+        //
+    }
+}

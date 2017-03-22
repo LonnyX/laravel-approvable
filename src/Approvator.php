@@ -1,0 +1,99 @@
+<?php
+
+namespace LonnyX\Approvable;
+
+use Illuminate\Support\Manager;
+use InvalidArgumentException;
+use LonnyX\Approvable\Contracts\Approvable as ApprovableContract;
+use LonnyX\Approvable\Contracts\ApproveDriver;
+use LonnyX\Approvable\Contracts\Approvator as ApprovatorContract;
+use LonnyX\Approvable\Drivers\Database;
+use RuntimeException;
+
+class Approvator extends Manager implements ApprovatorContract
+{
+    /**
+     * {@inheritdoc}
+     */
+    public function getDefaultDriver()
+    {
+        return $this->app['config']['audit.default'];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function createDriver($driver)
+    {
+        try {
+            return parent::createDriver($driver);
+        } catch (InvalidArgumentException $exception) {
+            if (class_exists($driver)) {
+                return $this->app->make($driver);
+            }
+
+            throw $exception;
+        }
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function approveDriver(ApprovableContract $model)
+    {
+        $driver = $this->driver($model->getApproveDriver());
+
+        if (!$driver instanceof ApproveDriver) {
+            throw new RuntimeException('The driver must implement the AuditDriver contract');
+        }
+
+        return $driver;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function execute(ApprovableContract $model)
+    {
+        if (!$model->readyForApproving()) {
+            return;
+        }
+
+        $driver = $this->approveDriver($model);
+
+        if (!$this->fireAuditingEvent($model, $driver)) {
+            return;
+        }
+
+        $audit = $driver->audit($model);
+
+        $this->app->make('events')->fire(
+            new Events\Approved($model, $driver, $audit)
+        );
+    }
+
+    /**
+     * Create an instance of the Database audit driver.
+     *
+     * @return \LonnyX\Approvable\Drivers\Database
+     */
+    protected function createDatabaseDriver()
+    {
+        return $this->app->make(Database::class);
+    }
+
+    /**
+     * Fire the laravel-approvable event.
+     *
+     * @param \LonnyX\Approvable\Contracts\Approvable   $model
+     * @param \LonnyX\Approvable\Contracts\ApproveDriver $driver
+     *
+     * @return bool
+     */
+    protected function fireAuditingEvent(ApprovableContract $model, ApproveDriver $driver)
+    {
+        return $this->app->make('events')->until(
+            new Events\Approving($model, $driver)
+        ) !== false;
+    }
+}

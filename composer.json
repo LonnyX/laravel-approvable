@@ -1,0 +1,33 @@
+{
+    "name": "lonnyx/laravel-approvable",
+    "description": "Approve changes of your Eloquent models in Laravel/Lumen",
+    "type": "package",
+    "require": {
+        "php": ">=5.5.9",
+        "illuminate/console": "~5.2",
+        "illuminate/database": "~5.2",
+        "illuminate/filesystem": "~5.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.0",
+        "mockery/mockery": "~0.9.4",
+        "orchestra/testbench": "^3.2"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Drilon Nolird",
+            "email": "lonnchee@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Lonnyx\\Approvable\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Lonnyx\\Approvable\\Tests\\": "tests/"
+        }
+    }
+}
