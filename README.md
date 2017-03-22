@@ -13,7 +13,7 @@ You can use this package in order to moderate changes of your content performed 
 
 ## Installation
 ```php
-composer require hootlex/laravel-moderation
+composer require lonnyx/laravel-approvable
 ```
 
 Then include the service provider inside `config/app.php`.
