@@ -28,7 +28,7 @@ Then include the service provider inside `config/app.php`.
 Publishing
 
 ```
-php artisan auditing:install
+php artisan approvable:install
 ```
 
 Database
