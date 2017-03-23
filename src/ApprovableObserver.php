@@ -1,16 +1,16 @@
 <?php
 
-namespace LonnyX\Approvable;
+namespace Lonnyx\Approvable;
 
-use LonnyX\Approvable\Contracts\Approvable as AuditableContract;
-use LonnyX\Approvable\Facades\Approvator;
+use Lonnyx\Approvable\Contracts\Approvable as AuditableContract;
+use Lonnyx\Approvable\Facades\Approvator;
 
 class ApprovableObserver
 {
     /**
      * Handle the updating event for the model.
      *
-     * @param \LonnyX\Approvable\Contracts\Approvable $model
+     * @param \Lonnyx\Approvable\Contracts\Approvable $model
      *
      * @return void
      */

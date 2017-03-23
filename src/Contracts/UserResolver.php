@@ -1,6 +1,6 @@
 <?php
 
-namespace LonnyX\Approvable\Contracts;
+namespace Lonnyx\Approvable\Contracts;
 
 interface UserResolver
 {

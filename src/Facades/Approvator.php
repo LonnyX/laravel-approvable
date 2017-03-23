@@ -1,6 +1,6 @@
 <?php
 
-namespace LonnyX\Approvable\Facades;
+namespace Lonnyx\Approvable\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
@@ -11,6 +11,6 @@ class Approvator extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return \LonnyX\Approvable\Contracts\Approvator::class;
+        return \Lonnyx\Approvable\Contracts\Approvator::class;
     }
 }

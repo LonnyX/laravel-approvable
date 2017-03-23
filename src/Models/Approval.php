@@ -1,6 +1,6 @@
 <?php
 
-namespace LonnyX\Approvable\Models;
+namespace Lonnyx\Approvable\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Config;

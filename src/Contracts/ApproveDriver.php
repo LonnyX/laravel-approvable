@@ -1,15 +1,15 @@
 <?php
 
-namespace LonnyX\Approvable\Contracts;
+namespace Lonnyx\Approvable\Contracts;
 
 interface ApproveDriver
 {
     /**
      * Perform an audit.
      *
-     * @param \LonnyX\Approvable\Contracts\Approvable $model
+     * @param \Lonnyx\Approvable\Contracts\Approvable $model
      *
-     * @return \LonnyX\Approvable\Models\Audit
+     * @return \Lonnyx\Approvable\Models\Audit
      */
     public function audit(Approvable $model);
 }

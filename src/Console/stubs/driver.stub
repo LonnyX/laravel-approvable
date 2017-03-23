@@ -2,18 +2,18 @@
 
 namespace App\AuditDrivers;
 
-use LonnyX\Approvable\Contracts\Auditable;
-use LonnyX\Approvable\Contracts\AuditDriver;
-use LonnyX\Approvable\Models\Audit;
+use Lonnyx\Approvable\Contracts\Auditable;
+use Lonnyx\Approvable\Contracts\AuditDriver;
+use Lonnyx\Approvable\Models\Audit;
 
 class CustomDriver implements AuditDriver
 {
     /**
      * Perform an audit.
      *
-     * @param \LonnyX\Approvable\Contracts\Auditable $model
+     * @param \Lonnyx\Approvable\Contracts\Auditable $model
      *
-     * @return \LonnyX\Approvable\Models\Audit
+     * @return \Lonnyx\Approvable\Models\Audit
      */
     public function audit(Auditable $model)
     {
@@ -23,7 +23,7 @@ class CustomDriver implements AuditDriver
     /**
      * Remove older audits that go over the threshold.
      *
-     * @param \LonnyX\Approvable\Contracts\Auditable $model
+     * @param \Lonnyx\Approvable\Contracts\Auditable $model
      *
      * @return bool
      */

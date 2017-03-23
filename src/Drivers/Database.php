@@ -1,10 +1,10 @@
 <?php
 
-namespace LonnyX\Approvable\Drivers;
+namespace Lonnyx\Approvable\Drivers;
 
-use LonnyX\Approvable\Contracts\Approvable;
-use LonnyX\Approvable\Contracts\ApproveDriver;
-use LonnyX\Approvable\Models\Approval;
+use Lonnyx\Approvable\Contracts\Approvable;
+use Lonnyx\Approvable\Contracts\ApproveDriver;
+use Lonnyx\Approvable\Models\Approval;
 
 class Database implements ApproveDriver
 {

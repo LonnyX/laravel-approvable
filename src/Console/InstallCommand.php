@@ -1,10 +1,10 @@
 <?php
 
-namespace LonnyX\Approvable\Console;
+namespace Lonnyx\Approvable\Console;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Artisan;
-use LonnyX\Approvable\ApprovableServiceProvider;
+use Lonnyx\Approvable\ApprovableServiceProvider;
 
 class InstallCommand extends Command
 {

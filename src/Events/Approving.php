@@ -1,31 +1,31 @@
 <?php
 
-namespace LonnyX\Approvable\Events;
+namespace Lonnyx\Approvable\Events;
 
-use LonnyX\Approvable\Contracts\Approvable;
-use LonnyX\Approvable\Contracts\ApproveDriver;
+use Lonnyx\Approvable\Contracts\Approvable;
+use Lonnyx\Approvable\Contracts\ApproveDriver;
 
 class Approving
 {
     /**
      * The Auditable model.
      *
-     * @var \LonnyX\Approvable\Contracts\Approvable
+     * @var \Lonnyx\Approvable\Contracts\Approvable
      */
     public $model;
 
     /**
      * Audit driver.
      *
-     * @var \LonnyX\Approvable\Contracts\ApproveDriver
+     * @var \Lonnyx\Approvable\Contracts\ApproveDriver
      */
     public $driver;
 
     /**
      * Create a new laravel-approvable event instance.
      *
-     * @param \LonnyX\Approvable\Contracts\Approvable   $model
-     * @param \LonnyX\Approvable\Contracts\ApproveDriver $driver
+     * @param \Lonnyx\Approvable\Contracts\Approvable   $model
+     * @param \Lonnyx\Approvable\Contracts\ApproveDriver $driver
      */
     public function __construct(Approvable $model, ApproveDriver $driver)
     {

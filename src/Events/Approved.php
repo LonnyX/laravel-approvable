@@ -1,24 +1,24 @@
 <?php
 
-namespace LonnyX\Approvable\Events;
+namespace Lonnyx\Approvable\Events;
 
-use LonnyX\Approvable\Contracts\Approvable;
-use LonnyX\Approvable\Contracts\ApproveDriver;
-use LonnyX\Approvable\Models\Approval;
+use Lonnyx\Approvable\Contracts\Approvable;
+use Lonnyx\Approvable\Contracts\ApproveDriver;
+use Lonnyx\Approvable\Models\Approval;
 
 class Approved
 {
     /**
      * The Auditable model.
      *
-     * @var \LonnyX\Approvable\Contracts\Approvable
+     * @var \Lonnyx\Approvable\Contracts\Approvable
      */
     public $model;
 
     /**
      * Audit driver.
      *
-     * @var \LonnyX\Approvable\Contracts\ApproveDriver
+     * @var \Lonnyx\Approvable\Contracts\ApproveDriver
      */
     public $driver;
 
@@ -32,9 +32,9 @@ class Approved
     /**
      * Create a new Audited event instance.
      *
-     * @param \LonnyX\Approvable\Contracts\Approvable   $model
-     * @param \LonnyX\Approvable\Contracts\ApproveDriver $driver
-     * @param \LonnyX\Approvable\Models\Approval          $approval
+     * @param \Lonnyx\Approvable\Contracts\Approvable   $model
+     * @param \Lonnyx\Approvable\Contracts\ApproveDriver $driver
+     * @param \Lonnyx\Approvable\Models\Approval          $approval
      */
     public function __construct(Approvable $model, ApproveDriver $driver, Approval $approval = null)
     {

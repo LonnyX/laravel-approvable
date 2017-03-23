@@ -1,13 +1,13 @@
 <?php
 
-namespace LonnyX\Approvable;
+namespace Lonnyx\Approvable;
 
 use Illuminate\Support\Manager;
 use InvalidArgumentException;
-use LonnyX\Approvable\Contracts\Approvable as ApprovableContract;
-use LonnyX\Approvable\Contracts\ApproveDriver;
-use LonnyX\Approvable\Contracts\Approvator as ApprovatorContract;
-use LonnyX\Approvable\Drivers\Database;
+use Lonnyx\Approvable\Contracts\Approvable as ApprovableContract;
+use Lonnyx\Approvable\Contracts\ApproveDriver;
+use Lonnyx\Approvable\Contracts\Approvator as ApprovatorContract;
+use Lonnyx\Approvable\Drivers\Database;
 use RuntimeException;
 
 class Approvator extends Manager implements ApprovatorContract
@@ -75,7 +75,7 @@ class Approvator extends Manager implements ApprovatorContract
     /**
      * Create an instance of the Database audit driver.
      *
-     * @return \LonnyX\Approvable\Drivers\Database
+     * @return \Lonnyx\Approvable\Drivers\Database
      */
     protected function createDatabaseDriver()
     {
@@ -85,8 +85,8 @@ class Approvator extends Manager implements ApprovatorContract
     /**
      * Fire the laravel-approvable event.
      *
-     * @param \LonnyX\Approvable\Contracts\Approvable   $model
-     * @param \LonnyX\Approvable\Contracts\ApproveDriver $driver
+     * @param \Lonnyx\Approvable\Contracts\Approvable   $model
+     * @param \Lonnyx\Approvable\Contracts\ApproveDriver $driver
      *
      * @return bool
      */

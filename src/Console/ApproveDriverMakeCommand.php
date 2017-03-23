@@ -1,6 +1,6 @@
 <?php
 
-namespace LonnyX\Approvable\Console;
+namespace Lonnyx\Approvable\Console;
 
 use Illuminate\Console\GeneratorCommand;
 
