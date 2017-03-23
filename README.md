@@ -21,7 +21,7 @@ Then include the service provider inside `config/app.php`.
 ```php
 'providers' => [
     ...
-    LonnyX\Approvable\ApprovableServiceProvider::class,
+    Lonnyx\Approvable\ApprovableServiceProvider::class,
     ...
 ];
 ```
@@ -39,11 +39,11 @@ php artisan migrate
 
 ## Prepare Model
 
-Setting up a model for approval couldn't be simpler. Just use the `LonnyX\Approvable\Approvable` trait in the model you wish to be approved and implement the `LonnyX\Approvable\Contracts\Approvable`.
+Setting up a model for approval couldn't be simpler. Just use the `Lonnyx\Approvable\Approvable` trait in the model you wish to be approved and implement the `Lonnyx\Approvable\Contracts\Approvable`.
 ```php
 use Illuminate\Database\Eloquent\Model;
-use LonnyX\Approvable\Contracts\Approvable as ApprovableContract;
-use LonnyX\Approvable\Approvable;
+use Lonnyx\Approvable\Contracts\Approvable as ApprovableContract;
+use Lonnyx\Approvable\Approvable;
 
 class User extends Model implements ApprovableContract;
 {
