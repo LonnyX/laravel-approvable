@@ -1,13 +1,13 @@
 <?php
 
-namespace LonnyX\Approvable\Contracts;
+namespace Lonnyx\Approvable\Contracts;
 
 interface Approvator
 {
     /**
      * Get an audit driver instance.
      *
-     * @param \LonnyX\Approvable\Contracts\Approvable $model
+     * @param \Lonnyx\Approvable\Contracts\Approvable $model
      *
      * @return ApproveDriver
      */
@@ -16,7 +16,7 @@ interface Approvator
     /**
      * Perform an audit.
      *
-     * @param \LonnyX\Approvable\Contracts\Approvable $model
+     * @param \Lonnyx\Approvable\Contracts\Approvable $model
      *
      * @return void
      */

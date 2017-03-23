@@ -1,13 +1,13 @@
 <?php
 
-namespace LonnyX\Approvable;
+namespace Lonnyx\Approvable;
 
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Str;
-use LonnyX\Approvable\Contracts\UserResolver;
-use LonnyX\Approvable\Models\Approval as AprovalModel;
+use Lonnyx\Approvable\Contracts\UserResolver;
+use Lonnyx\Approvable\Models\Approval as AprovalModel;
 use RuntimeException;
 use UnexpectedValueException;
 
@@ -99,7 +99,7 @@ trait Approvable
         $old = $this->approvals()->latest()->first();
         if(empty($old))
             $old = $this->getOriginal();
-        else 
+        else
             $old = $old->new_values;
 
         $new = $this->getAttributes();
@@ -332,7 +332,7 @@ trait Approvable
      * The condition to check before triggering the Approvator
      * if this return true, the changes will be recorded to the DB
      * and the model will not update.
-     * 
+     *
      * @return boolean
      */
     public function approvalCondition()

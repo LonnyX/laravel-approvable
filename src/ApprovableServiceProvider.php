@@ -1,12 +1,12 @@
 <?php
 
-namespace LonnyX\Approvable;
+namespace Lonnyx\Approvable;
 
 use Illuminate\Support\ServiceProvider;
-use LonnyX\Approvable\Console\ApproveDriverMakeCommand;
-use LonnyX\Approvable\Console\ApproveTableCommand;
-use LonnyX\Approvable\Console\InstallCommand;
-use LonnyX\Approvable\Contracts\Approvator;
+use Lonnyx\Approvable\Console\ApproveDriverMakeCommand;
+use Lonnyx\Approvable\Console\ApproveTableCommand;
+use Lonnyx\Approvable\Console\InstallCommand;
+use Lonnyx\Approvable\Contracts\Approvator;
 
 class ApprovableServiceProvider extends ServiceProvider
 {
@@ -59,7 +59,7 @@ class ApprovableServiceProvider extends ServiceProvider
         ]);
 
         $this->app->singleton(Approvator::class, function ($app) {
-            return new \LonnyX\Approvable\Approvator($app);
+            return new \Lonnyx\Approvable\Approvator($app);
         });
     }
 
