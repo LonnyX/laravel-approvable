@@ -10,14 +10,14 @@ use Lonnyx\Approvable\Contracts\Approvator as ApprovatorContract;
 use Lonnyx\Approvable\Drivers\Database;
 use RuntimeException;
 
-class Approvator extends Manager implements ApprovatorContract
+class Approvator extends Manager
 {
     /**
      * {@inheritdoc}
      */
     public function getDefaultDriver()
     {
-        return $this->app['config']['audit.default'];
+        return $this->app['config']['approvable.default'];
     }
 
     /**
@@ -39,7 +39,7 @@ class Approvator extends Manager implements ApprovatorContract
     /**
      * {@inheritdoc}
      */
-    public function approveDriver(ApprovableContract $model)
+    public function approveDriver($model)
     {
         $driver = $this->driver($model->getApproveDriver());
 
@@ -53,7 +53,7 @@ class Approvator extends Manager implements ApprovatorContract
     /**
      * {@inheritdoc}
      */
-    public function execute(ApprovableContract $model)
+    public function execute($model)
     {
         if (!$model->readyForApproving()) {
             return;
@@ -90,7 +90,7 @@ class Approvator extends Manager implements ApprovatorContract
      *
      * @return bool
      */
-    protected function fireAuditingEvent(ApprovableContract $model, ApproveDriver $driver)
+    protected function fireAuditingEvent($model, ApproveDriver $driver)
     {
         return $this->app->make('events')->until(
             new Events\Approving($model, $driver)

@@ -32,11 +32,11 @@ class Approved
     /**
      * Create a new Audited event instance.
      *
-     * @param \Lonnyx\Approvable\Contracts\Approvable   $model
+     * @param $model
      * @param \Lonnyx\Approvable\Contracts\ApproveDriver $driver
-     * @param \Lonnyx\Approvable\Models\Approval          $approval
+     * @param \Lonnyx\Approvable\Models\Approval         $approval
      */
-    public function __construct(Approvable $model, ApproveDriver $driver, Approval $approval = null)
+    public function __construct($model, ApproveDriver $driver, Approval $approval = null)
     {
         $this->model = $model;
         $this->driver = $driver;

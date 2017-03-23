@@ -39,13 +39,12 @@ php artisan migrate
 
 ## Prepare Model
 
-Setting up a model for approval couldn't be simpler. Just use the `Lonnyx\Approvable\Approvable` trait in the model you wish to be approved and implement the `Lonnyx\Approvable\Contracts\Approvable`.
+Setting up a model for approval couldn't be simpler. Just use the `Lonnyx\Approvable\Approvable` trait in the model you wish to be approved.
 ```php
 use Illuminate\Database\Eloquent\Model;
-use Lonnyx\Approvable\Contracts\Approvable as ApprovableContract;
 use Lonnyx\Approvable\Approvable;
 
-class User extends Model implements ApprovableContract;
+class User extends Model
 {
     use Approvable;
 

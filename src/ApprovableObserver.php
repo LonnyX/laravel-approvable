@@ -14,7 +14,7 @@ class ApprovableObserver
      *
      * @return void
      */
-    public function updating(AuditableContract $model)
+    public function updating($model)
     {
         if($model->approvalCondition() && $model->FIRE_APPROVABLE_EVENT){
             Approvator::execute($model->setApproveEvent('updating'));

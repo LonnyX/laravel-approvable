@@ -11,7 +11,7 @@ class Database implements ApproveDriver
     /**
      * {@inheritdoc}
      */
-    public function audit(Approvable $model)
+    public function audit($model)
     {
         return Approval::create($model->toApprove());
     }
