@@ -167,7 +167,7 @@ trait Approvable
      */
     protected function resolveUserId()
     {
-        $userResolver = Config::get('audit.user.resolver');
+        $userResolver = config('approvable.user.resolver');
 
         if (is_callable($userResolver)) {
             return $userResolver();
@@ -274,7 +274,7 @@ trait Approvable
     public static function isApprovableEnabled()
     {
         if (App::runningInConsole()) {
-            return (bool) Config::get('audit.console', false);
+            return (bool) config('approvable.console', false);
         }
 
         return true;

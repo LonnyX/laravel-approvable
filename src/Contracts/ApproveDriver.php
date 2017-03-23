@@ -7,9 +7,8 @@ interface ApproveDriver
     /**
      * Perform an audit.
      *
-     * @param \Lonnyx\Approvable\Contracts\Approvable $model
-     *
+     * @param $model
      * @return \Lonnyx\Approvable\Models\Audit
      */
-    public function audit(Approvable $model);
+    public function audit($model);
 }
