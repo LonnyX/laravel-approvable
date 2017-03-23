@@ -34,15 +34,15 @@ class ApprovableServiceProvider extends ServiceProvider
      */
     protected function setupConfig($app)
     {
-        $config = realpath(__DIR__.'/../config/audit.php');
+        $config = realpath(__DIR__.'/../config/approvable.php');
 
         if ($app->runningInConsole()) {
             $this->publishes([
-                $config => base_path('config/audit.php'),
+                $config => base_path('config/approvable.php'),
             ]);
         }
 
-        $this->mergeConfigFrom($config, 'audit');
+        $this->mergeConfigFrom($config, 'approvable');
     }
 
     /**
