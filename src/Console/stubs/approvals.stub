@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAuditsTable extends Migration
+class CreateApprovalsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -20,7 +20,7 @@ class CreateAuditsTable extends Migration
             $table->morphs('approvable');
             $table->text('old_values')->nullable();
             $table->text('new_values')->nullable();
-            $table->string('status')->default(0);
+            $table->tinyInteger('status')->default(0);
             $table->timestamp('created_at');
         });
     }
