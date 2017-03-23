@@ -350,7 +350,15 @@ trait Approvable
 
     public function previsualize()
     {
-        $last = $this->approvals()->latest()->first();
-        return $this->fill($last->new_values);
+        if ($this->hasPendingVersions()) {
+            $last = $this->approvals()->latest()->first();
+            return $this->fill($last->new_values);
+        }
+        return $this;
+    }
+
+    public function hasPendingVersions()
+    {
+        return $this->approvals()->count();
     }
 }
